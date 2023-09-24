@@ -1,4 +1,3 @@
-// actions.js
 export const fetchBackendData = () => ({
     type: "FETCH_BACKEND_DATA",
 });

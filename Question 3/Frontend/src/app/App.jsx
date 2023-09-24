@@ -1,23 +1,28 @@
-// App.jsx
 import React from "react";
 import { connect } from "react-redux";
 import { fetchBackendData } from "../actions/actions";
 
-const App = ({ fetchBackendData }) => {
-    const handleClick = () => {
-        fetchBackendData();
-    };
-
+const App = ({ fetchBackendData, backendData }) => {
     return (
         <div>
-            <button onClick={handleClick}>Fetch Backend Data</button>
-            <div>{}</div>
+            <button
+                onClick={() => {
+                    fetchBackendData();
+                }}
+            >
+                redux saga button
+            </button>
+            <div>{backendData}</div>
         </div>
     );
 };
 
-const mapDispatchToProps = {
-    fetchBackendData,
+const mapStateToProps = state => {
+    return {
+        backendData: state.backendData,
+    };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {
+    fetchBackendData,
+})(App);
