@@ -1,13 +1,14 @@
+// reducers.js
 const initialState = {
-    categories: [],
+    backendData: null, // 初始为空
 };
 
 export const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "SET_CATEGORIES":
+        case "SET_BACKEND_DATA":
             return {
                 ...state,
-                categories: action.payload,
+                backendData: action.payload,
             };
         default:
             return state;
