@@ -1,15 +1,1 @@
-const initialState = {
-    backendData: null, // 初始为空
-};
-
-export const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "SET_BACKEND_DATA":
-            return {
-                ...state,
-                backendData: action.payload,
-            };
-        default:
-            return state;
-    }
-};
+export const rootReducer = (state = { backendData: null }, action) => (action.type === "SET_BACKEND_DATA" ? { ...state, backendData: action.payload } : state);
