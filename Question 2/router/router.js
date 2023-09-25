@@ -19,6 +19,5 @@ function convertArrayToTree(categories) {
     };
 }
 
-// test get api in Postman (http://localhost:8080)
 router.get("/", (req, res) => res.status(200).json({ msg: "fetch data successful", data: convertArrayToTree(categroies) }));
 module.exports = router;
